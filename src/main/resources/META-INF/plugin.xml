@@ -1,0 +1,23 @@
+<idea-plugin version="2">
+    <name>Xtend</name>
+    <description>Plugin for Xtend language support</description>
+    <version>1.1</version>
+    <vendor>YourCompany</vendor>
+    <idea-version since-build="107.105"/>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileTypeFactory implementation="za.co.svenlange.intellij.xtend.XtendFileTypeLoader"/>
+    </extensions>
+</idea-plugin>
