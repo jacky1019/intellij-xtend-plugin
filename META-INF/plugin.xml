@@ -2,7 +2,7 @@
     <id>Xtend</id>
     <name>Xtend</name>
     <description>Plugin for Xtend language support</description>
-    <version>1.1</version>
+    <version>1.0</version>
     <vendor>YourCompany</vendor>
     <idea-version since-build="107.105"/>
 

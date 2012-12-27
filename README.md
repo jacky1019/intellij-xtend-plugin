@@ -6,6 +6,10 @@ The Xtend language plugin brings superb [Xtend](http://xtend-lang.org) IDE suppo
 
 SCM https://github.com/svenlange/intellij-xtend-plugin
 
+## Dev Setup
+
+Two IntelliJ Plugins are needed: JFlex and Grammar Kit
+
 ## Resources
 
 ### JFlex
@@ -20,8 +24,14 @@ SCM https://github.com/svenlange/intellij-xtend-plugin
 * [IntelliJ IDEA Plugins - Custom Languages](http://plugins.intellij.net/category/index?pr=idea&category_id=48)
 * https://github.com/mtoader/google-go-lang-idea-plugin
 * [YouTube: Writing IntelliJ IDEA Plugins. Part I](http://www.youtube.com/watch?v=AktCFxC9Bx0)
-* [Grammar-Kit](http://plugins.intellij.net/plugin?pr=idea&pluginId=6606&showAllUpdates=true)
-* [Grammar-Kit Forum Thread](http://devnet.jetbrains.net/thread/432304)
+
+* Parser
+  * [Grammar-Kit](http://plugins.intellij.net/plugin?pr=idea&pluginId=6606&showAllUpdates=true)
+  * [Grammar-Kit Forum Thread](http://devnet.jetbrains.net/thread/432304)
+  * [Parsing Expression Grammars](http://bford.info/pub/lang/peg)
+  * http://pegjs.majda.cz/online
+  * http://www.cforcoding.com/2010/01/markdown-and-introduction-to-parsing.html
+  * [grammar kit based ice framework plugin](http://code.google.com/p/ice-framework-idea-plugin/)
 
 ### Xtend
 
