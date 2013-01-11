@@ -12,7 +12,7 @@ SCM https://github.com/svenlange/intellij-xtend-plugin
 
 ## Dev Setup
 
-Two IntelliJ Plugins are needed: JFlex and Grammar Kit
+Two IntelliJ Plugins are needed: [JFlex](http://plugins.intellij.net/plugin/?idea&pluginId=263) and [Grammar-Kit](http://plugins.intellij.net/plugin?pr=idea&pluginId=6606)
 
 ## Resources
 
@@ -37,4 +37,4 @@ Two IntelliJ Plugins are needed: JFlex and Grammar Kit
 
 ### Xtend
 
-* http://git.eclipse.org/c/xtend/org.eclipse.xtend.git/tree/plugins/org.eclipse.xtend.core/src/org/eclipse/xtend/core/Xtend.xtext
+* [Eclipse Git - Xtend Xtext Grammar] (http://git.eclipse.org/c/tmf/org.eclipse.xtext.git/tree/plugins/org.eclipse.xtend.core/src/org/eclipse/xtend/core/Xtend.xtext)
