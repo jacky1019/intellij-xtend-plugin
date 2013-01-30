@@ -1,4 +1,5 @@
 {
+  classHeader="header.txt"
   parserClass="za.co.svenlange.intellij.xtend.parser.XtendParser"
   stubParserClass="za.co.svenlange.intellij.xtend.parser.GeneratedParserUtilBase"
  
