@@ -18,6 +18,7 @@ Two IntelliJ Plugins are needed: [JFlex](http://plugins.intellij.net/plugin/?ide
 
 ### Intellij Plugin Development
 
+* [Custom Language Support Tutorial](http://confluence.jetbrains.com/display/IntelliJIDEA/Custom+Language+Support)
 * http://confluence.jetbrains.net/display/IDEADEV/PluginDevelopment
 * http://confluence.jetbrains.net/display/IDEADEV/Developing+Custom+Language+Plugins+for+IntelliJ+IDEA
 * [IntelliJ IDEA Plugins - Custom Languages](http://plugins.intellij.net/category/index?pr=idea&category_id=48)
@@ -25,6 +26,7 @@ Two IntelliJ Plugins are needed: [JFlex](http://plugins.intellij.net/plugin/?ide
 * [YouTube: Writing IntelliJ IDEA Plugins. Part I](http://www.youtube.com/watch?v=AktCFxC9Bx0)
 * [JetBrains TV: Live Coding an IntelliJ IDEA Plugin from Scratch](http://tv.jetbrains.net/videocontent/live-coding-an-intellij-idea-plugin-from-scratch)
 * Lexer (JFlex)
+  * http://jflex.de/manual.html
   * http://james.bond.edu.au/courses/inft13310/053/Slides/langs_lexing.html
   * http://james.bond.edu.au/courses/inft13310/053/Labs/jflex.html
 * Parser
