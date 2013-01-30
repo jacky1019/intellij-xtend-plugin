@@ -6,12 +6,11 @@ import com.intellij.openapi.fileTypes.FileTypeFactory;
 import org.jetbrains.annotations.NotNull;
 
 import static za.co.svenlange.intellij.xtend.XtendFileType.DEFAULT_EXTENSION;
-import static za.co.svenlange.intellij.xtend.XtendFileType.INSTANCE;
 
 public class XtendFileTypeFactory extends FileTypeFactory {
 
-	public void createFileTypes(@NotNull FileTypeConsumer consumer) {
-		consumer.consume(INSTANCE, new ExtensionFileNameMatcher(DEFAULT_EXTENSION));
-	}
+    public void createFileTypes(@NotNull FileTypeConsumer consumer) {
+        consumer.consume(XtendFileType.INSTANCE, new ExtensionFileNameMatcher(DEFAULT_EXTENSION));
+    }
 
 }

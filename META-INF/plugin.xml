@@ -20,5 +20,6 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <fileTypeFactory implementation="za.co.svenlange.intellij.xtend.XtendFileTypeFactory"/>
+        <lang.parserDefinition language="Xtend" implementationClass="za.co.svenlange.intellij.xtend.parser.XtendParserDefinition"/>
     </extensions>
 </idea-plugin>

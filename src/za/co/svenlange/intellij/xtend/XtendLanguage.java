@@ -7,7 +7,8 @@ import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory;
 import org.jetbrains.annotations.NotNull;
 
 public class XtendLanguage extends Language {
-	public static final Language INSTANCE = new XtendLanguage();
+
+	public static final XtendLanguage INSTANCE = new XtendLanguage();
 
 	public XtendLanguage() {
 		super("Xtend");
