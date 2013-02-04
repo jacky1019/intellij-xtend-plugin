@@ -24,7 +24,8 @@ Two IntelliJ Plugins are needed: [JFlex](http://plugins.intellij.net/plugin/?ide
 * [IntelliJ IDEA Plugins - Custom Languages](http://plugins.intellij.net/category/index?pr=idea&category_id=48)
 * https://github.com/mtoader/google-go-lang-idea-plugin
 * [YouTube: Writing IntelliJ IDEA Plugins. Part I](http://www.youtube.com/watch?v=AktCFxC9Bx0)
-* [JetBrains TV: Live Coding an IntelliJ IDEA Plugin from Scratch](http://tv.jetbrains.net/videocontent/live-coding-an-intellij-idea-plugin-from-scratch)
+* [JetBrains TV: Live Coding an IntelliJ IDEA Plugin from Scratch. Part 1](http://tv.jetbrains.net/videocontent/live-coding-an-intellij-idea-plugin-from-scratch)
+* [JetBrains TV: Live Coding an IntelliJ IDEA Plugin from Scratch. Part 2](http://tv.jetbrains.net/videocontent/live-coding-an-intellij-idea-plugin-from-scratch-part-2)
 * Lexer (JFlex)
   * http://jflex.de/manual.html
   * http://james.bond.edu.au/courses/inft13310/053/Slides/langs_lexing.html
