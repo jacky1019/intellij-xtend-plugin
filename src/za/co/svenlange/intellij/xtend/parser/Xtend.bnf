@@ -8,15 +8,11 @@
   psiClassPrefix="Xtend"
   psiImplClassSuffix="Impl"
   psiPackage="za.co.svenlange.intellij.xtend.psi"
-  psiImplPackage="za.co.svenlange.intellij.xtend.psi.impl"
+  psiImplPackage="za.co.svenlange.intellij.xtend.psi"
  
   elementTypeHolderClass="za.co.svenlange.intellij.xtend.psi.XtendTypes"
   elementTypeClass="za.co.svenlange.intellij.xtend.psi.XtendElementType"
   tokenTypeClass="za.co.svenlange.intellij.xtend.psi.XtendTokenType"
 }
  
-simpleFile ::= item_*
- 
-private item_ ::= (property|COMMENT|CRLF)
- 
-property ::= (KEY? SEPARATOR VALUE?) | KEY
+XtendFile ::= (Buchstaben|Comment|LineTerminator)

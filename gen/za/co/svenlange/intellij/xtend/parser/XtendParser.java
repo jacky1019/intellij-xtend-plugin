@@ -40,39 +40,34 @@ public class XtendParser implements PsiParser {
     int level_ = 0;
     boolean result_;
     builder_ = adapt_builder_(root_, builder_, this);
-    if (root_ == PROPERTY) {
-      result_ = property(builder_, level_ + 1);
+    Marker marker_ = builder_.mark();
+    result_ = parse_root_(root_, builder_, level_);
+    while (builder_.getTokenType() != null) {
+      builder_.advanceLexer();
     }
-    else {
-      Marker marker_ = builder_.mark();
-      result_ = parse_root_(root_, builder_, level_);
-      while (builder_.getTokenType() != null) {
-        builder_.advanceLexer();
-      }
-      marker_.done(root_);
-    }
+    marker_.done(root_);
     return builder_.getTreeBuilt();
   }
 
   protected boolean parse_root_(final IElementType root_, final PsiBuilder builder_, final int level_) {
-    return simpleFile(builder_, level_ + 1);
+    return XtendFile(builder_, level_ + 1);
   }
 
   /* ********************************************************** */
-  // (property|COMMENT|CRLF)
-  static boolean item_(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "item_")) return false;
-    return item__0(builder_, level_ + 1);
+  // (Buchstaben|Comment|LineTerminator)
+  static boolean XtendFile(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "XtendFile")) return false;
+    return XtendFile_0(builder_, level_ + 1);
   }
 
-  // property|COMMENT|CRLF
-  private static boolean item__0(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "item__0")) return false;
+  // Buchstaben|Comment|LineTerminator
+  private static boolean XtendFile_0(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "XtendFile_0")) return false;
     boolean result_ = false;
     Marker marker_ = builder_.mark();
-    result_ = property(builder_, level_ + 1);
+    result_ = consumeToken(builder_, BUCHSTABEN);
     if (!result_) result_ = consumeToken(builder_, COMMENT);
-    if (!result_) result_ = consumeToken(builder_, CRLF);
+    if (!result_) result_ = consumeToken(builder_, LINETERMINATOR);
     if (!result_) {
       marker_.rollbackTo();
     }
@@ -80,81 +75,6 @@ public class XtendParser implements PsiParser {
       marker_.drop();
     }
     return result_;
-  }
-
-  /* ********************************************************** */
-  // (KEY? SEPARATOR VALUE?) | KEY
-  public static boolean property(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "property")) return false;
-    if (!nextTokenIs(builder_, KEY) && !nextTokenIs(builder_, SEPARATOR)
-        && replaceVariants(builder_, 2, "<property>")) return false;
-    boolean result_ = false;
-    Marker marker_ = builder_.mark();
-    enterErrorRecordingSection(builder_, level_, _SECTION_GENERAL_, "<property>");
-    result_ = property_0(builder_, level_ + 1);
-    if (!result_) result_ = consumeToken(builder_, KEY);
-    if (result_) {
-      marker_.done(PROPERTY);
-    }
-    else {
-      marker_.rollbackTo();
-    }
-    result_ = exitErrorRecordingSection(builder_, level_, result_, false, _SECTION_GENERAL_, null);
-    return result_;
-  }
-
-  // (KEY? SEPARATOR VALUE?)
-  private static boolean property_0(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "property_0")) return false;
-    return property_0_0(builder_, level_ + 1);
-  }
-
-  // KEY? SEPARATOR VALUE?
-  private static boolean property_0_0(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "property_0_0")) return false;
-    boolean result_ = false;
-    Marker marker_ = builder_.mark();
-    result_ = property_0_0_0(builder_, level_ + 1);
-    result_ = result_ && consumeToken(builder_, SEPARATOR);
-    result_ = result_ && property_0_0_2(builder_, level_ + 1);
-    if (!result_) {
-      marker_.rollbackTo();
-    }
-    else {
-      marker_.drop();
-    }
-    return result_;
-  }
-
-  // KEY?
-  private static boolean property_0_0_0(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "property_0_0_0")) return false;
-    consumeToken(builder_, KEY);
-    return true;
-  }
-
-  // VALUE?
-  private static boolean property_0_0_2(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "property_0_0_2")) return false;
-    consumeToken(builder_, VALUE);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // item_*
-  static boolean simpleFile(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "simpleFile")) return false;
-    int offset_ = builder_.getCurrentOffset();
-    while (true) {
-      if (!item_(builder_, level_ + 1)) break;
-      int next_offset_ = builder_.getCurrentOffset();
-      if (offset_ == next_offset_) {
-        empty_element_parsed_guard_(builder_, offset_, "simpleFile");
-        break;
-      }
-      offset_ = next_offset_;
-    }
-    return true;
   }
 
 }

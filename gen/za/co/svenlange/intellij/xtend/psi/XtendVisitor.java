@@ -24,10 +24,6 @@ import com.intellij.psi.PsiElement;
 
 public class XtendVisitor extends PsiElementVisitor {
 
-  public void visitProperty(@NotNull XtendProperty o) {
-    visitPsiElement(o);
-  }
-
   public void visitPsiElement(@NotNull PsiElement o) {
     visitElement(o);
   }
