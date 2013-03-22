@@ -13,6 +13,7 @@ import za.co.svenlange.intellij.xtend.psi.XtendTypes;
 %unicode
 %function advance
 %type IElementType
+%debug
 
 LineTerminator = \r|\n|\r\n
 InputCharacter = [^\r\n]
@@ -30,156 +31,170 @@ Identifier = [:jletter:] [:jletterdigit:]*
 
 DecIntegerLiteral = 0 | [1-9][0-9]*
 
+/* string and character literals */
+StringCharacter = [^\r\n\"\\]
+SingleCharacter = [^\r\n\'\\]
+
 %state STRING
 
 %%
+<YYINITIAL> {
   /* keywords (Xbase) */
-  "boolean"                      {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "break"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "byte"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "case"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "catch"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "char"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "class"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "const"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "continue"                     {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "do"                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "double"                       {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "else"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "extends"                      {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "finally"                      {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "float"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "for"                          {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "default"                      {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "int"                          {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "interface"                    {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "long"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "native"                       {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "goto"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "if"                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "public"                       {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "short"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "super"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "switch"                       {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "synchronized"                 {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "transient"                    {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "void"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "while"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "this"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  "boolean"                      {return XtendTypes.KEYWORD;}
+  "break"                        {return XtendTypes.KEYWORD;}
+  "byte"                         {return XtendTypes.KEYWORD;}
+  "case"                         {return XtendTypes.KEYWORD;}
+  "catch"                        {return XtendTypes.KEYWORD;}
+  "char"                         {return XtendTypes.KEYWORD;}
+  "class"                        {return XtendTypes.KEYWORD;}
+  "const"                        {return XtendTypes.KEYWORD;}
+  "continue"                     {return XtendTypes.KEYWORD;}
+  "do"                           {return XtendTypes.KEYWORD;}
+  "double"                       {return XtendTypes.KEYWORD;}
+  "else"                         {return XtendTypes.KEYWORD;}
+  "extends"                      {return XtendTypes.KEYWORD;}
+  "finally"                      {return XtendTypes.KEYWORD;}
+  "float"                        {return XtendTypes.KEYWORD;}
+  "for"                          {return XtendTypes.KEYWORD;}
+  "default"                      {return XtendTypes.KEYWORD;}
+  "int"                          {return XtendTypes.KEYWORD;}
+  "interface"                    {return XtendTypes.KEYWORD;}
+  "long"                         {return XtendTypes.KEYWORD;}
+  "native"                       {return XtendTypes.KEYWORD;}
+  "goto"                         {return XtendTypes.KEYWORD;}
+  "if"                           {return XtendTypes.KEYWORD;}
+  "public"                       {return XtendTypes.KEYWORD;}
+  "short"                        {return XtendTypes.KEYWORD;}
+  "super"                        {return XtendTypes.KEYWORD;}
+  "switch"                       {return XtendTypes.KEYWORD;}
+  "synchronized"                 {return XtendTypes.KEYWORD;}
+  "transient"                    {return XtendTypes.KEYWORD;}
+  "void"                         {return XtendTypes.KEYWORD;}
+  "while"                        {return XtendTypes.KEYWORD;}
+  "this"                         {return XtendTypes.KEYWORD;}
   
   /* keywords (Xtend) */
-  "abstract"                     {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "create"                       {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "def"                          {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "dispatch"                     {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "extension"                    {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "final"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "implements"                   {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "import"                       {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "instanceof"                   {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "new"                          {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "override"                     {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "package"                      {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "protected"                    {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "private"                      {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "return"                       {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "static"                       {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "throws"                       {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "val"                          {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "var"                          {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  "abstract"                     {return XtendTypes.KEYWORD;}
+  "create"                       {return XtendTypes.KEYWORD;}
+  "def"                          {return XtendTypes.KEYWORD;}
+  "dispatch"                     {return XtendTypes.KEYWORD;}
+  "extension"                    {return XtendTypes.KEYWORD;}
+  "final"                        {return XtendTypes.KEYWORD;}
+  "implements"                   {return XtendTypes.KEYWORD;}
+  "import"                       {return XtendTypes.KEYWORD;}
+  "instanceof"                   {return XtendTypes.KEYWORD;}
+  "new"                          {return XtendTypes.KEYWORD;}
+  "override"                     {return XtendTypes.KEYWORD;}
+  "package"                      {return XtendTypes.KEYWORD;}
+  "protected"                    {return XtendTypes.KEYWORD;}
+  "private"                      {return XtendTypes.KEYWORD;}
+  "return"                       {return XtendTypes.KEYWORD;}
+  "static"                       {return XtendTypes.KEYWORD;}
+  "throws"                       {return XtendTypes.KEYWORD;}
+  "val"                          {return XtendTypes.KEYWORD;}
+  "var"                          {return XtendTypes.KEYWORD;}
   
   
   /* boolean literals */
-  "true"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "false"                        {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  "true"                         {return XtendTypes.KEYWORD;}
+  "false"                        {return XtendTypes.KEYWORD;}
   
   /* null literal */
-  "null"                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  "null"                         {return XtendTypes.KEYWORD;}
   
   
   /* separators */
-  "("                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ")"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "{"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "}"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "["                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "]"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ";"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ","                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "."                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "::"                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  "("                            {return XtendTypes.BUCHSTABEN;}
+  ")"                            {return XtendTypes.BUCHSTABEN;}
+  "{"                            {return XtendTypes.BUCHSTABEN;}
+  "}"                            {return XtendTypes.BUCHSTABEN;}
+  "["                            {return XtendTypes.BUCHSTABEN;}
+  "]"                            {return XtendTypes.BUCHSTABEN;}
+  ";"                            {return XtendTypes.BUCHSTABEN;}
+  ","                            {return XtendTypes.BUCHSTABEN;}
+  "."                            {return XtendTypes.BUCHSTABEN;}
+  "::"                           {return XtendTypes.BUCHSTABEN;}
   
   /* operators */
-  "="                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ">"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "<"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "!"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "~"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "?"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ":"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "=="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "<="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ">="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "!="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "&&"                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "||"                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "++"                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "--"                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "+"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "-"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "*"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "/"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "&"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "|"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "^"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "%"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "<<"                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ">>"                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ">>>"                          {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "+="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "-="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "*="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "/="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "&="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "|="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "^="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "%="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "<<="                          {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ">>="                          {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  ">>>="                         {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  "="                            {return XtendTypes.BUCHSTABEN;}
+  ">"                            {return XtendTypes.BUCHSTABEN;}
+  "<"                            {return XtendTypes.BUCHSTABEN;}
+  "!"                            {return XtendTypes.BUCHSTABEN;}
+  "~"                            {return XtendTypes.BUCHSTABEN;}
+  "?"                            {return XtendTypes.BUCHSTABEN;}
+  ":"                            {return XtendTypes.BUCHSTABEN;}
+  "=="                           {return XtendTypes.BUCHSTABEN;}
+  "<="                           {return XtendTypes.BUCHSTABEN;}
+  ">="                           {return XtendTypes.BUCHSTABEN;}
+  "!="                           {return XtendTypes.BUCHSTABEN;}
+  "&&"                           {return XtendTypes.BUCHSTABEN;}
+  "||"                           {return XtendTypes.BUCHSTABEN;}
+  "++"                           {return XtendTypes.BUCHSTABEN;}
+  "--"                           {return XtendTypes.BUCHSTABEN;}
+  "+"                            {return XtendTypes.BUCHSTABEN;}
+  "-"                            {return XtendTypes.BUCHSTABEN;}
+  "*"                            {return XtendTypes.BUCHSTABEN;}
+  "/"                            {return XtendTypes.BUCHSTABEN;}
+  "&"                            {return XtendTypes.BUCHSTABEN;}
+  "|"                            {return XtendTypes.BUCHSTABEN;}
+  "^"                            {return XtendTypes.BUCHSTABEN;}
+  "%"                            {return XtendTypes.BUCHSTABEN;}
+  "<<"                           {return XtendTypes.BUCHSTABEN;}
+  ">>"                           {return XtendTypes.BUCHSTABEN;}
+  ">>>"                          {return XtendTypes.BUCHSTABEN;}
+  "+="                           {return XtendTypes.BUCHSTABEN;}
+  "-="                           {return XtendTypes.BUCHSTABEN;}
+  "*="                           {return XtendTypes.BUCHSTABEN;}
+  "/="                           {return XtendTypes.BUCHSTABEN;}
+  "&="                           {return XtendTypes.BUCHSTABEN;}
+  "|="                           {return XtendTypes.BUCHSTABEN;}
+  "^="                           {return XtendTypes.BUCHSTABEN;}
+  "%="                           {return XtendTypes.BUCHSTABEN;}
+  "<<="                          {return XtendTypes.BUCHSTABEN;}
+  ">>="                          {return XtendTypes.BUCHSTABEN;}
+  ">>>="                         {return XtendTypes.BUCHSTABEN;}
   
+  /* string literal */
+  \"                             {yybegin(STRING);}
   
-<YYINITIAL> {
   /* identifiers */ 
-  {Identifier}                   {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  {Identifier}                   {return XtendTypes.BUCHSTABEN;}
  
   /* literals */
-  {DecIntegerLiteral}            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  \"                             {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  {DecIntegerLiteral}            {return XtendTypes.BUCHSTABEN;}
+  \"                             {return XtendTypes.BUCHSTABEN;}
 
   /* operators */
-  "="                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "=="                           {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
-  "+"                            {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  "="                            {return XtendTypes.BUCHSTABEN;}
+  "=="                           {return XtendTypes.BUCHSTABEN;}
+  "+"                            {return XtendTypes.BUCHSTABEN;}
 
   /* comments */
-  {Comment}                      {System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN;}
+  {Comment}                      {return XtendTypes.COMMENT;}
  
   /* whitespace */
-  {WhiteSpace}+                  {System.out.println("Token: "+ yytext()); return TokenType.WHITE_SPACE;}
+  {WhiteSpace}+                  {return TokenType.WHITE_SPACE;}
 }
 
 <STRING> {
-  \"                             { yybegin(YYINITIAL); 
-                                   System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN; }
-  [^\n\r\"\\]+                   { System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN; }
-  \\t                            { System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN; }
-  \\n                            { System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN; }
-
-  \\r                            { System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN; }
-  \\\"                           { System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN; }
-  \\                             { System.out.println("Token: "+ yytext()); return XtendTypes.BUCHSTABEN; }
+  \"                             {yybegin(YYINITIAL); return XtendTypes.STRING;}
+  
+  {StringCharacter}+             {/**/}
+  
+  /* escape sequences */
+  "\\b"                          { return XtendTypes.STRING; }
+  "\\t"                          { return XtendTypes.STRING; }
+  "\\n"                          { return XtendTypes.STRING; }
+  "\\f"                          { return XtendTypes.STRING; }
+  "\\r"                          { return XtendTypes.STRING; }
+  "\\\""                         { return XtendTypes.STRING; }
+  "\\'"                          { return XtendTypes.STRING; }
+  "\\\\"                         { return XtendTypes.STRING; }
+  
+  /* error cases */
+  \\.                            { throw new RuntimeException("Illegal escape sequence \""+yytext()+"\""); }
+  {LineTerminator}               { throw new RuntimeException("Unterminated string at end of line"); }
 }
 
 // Unknown symbol is using for debug goals.
-.                                         { return TokenType.BAD_CHARACTER; }
+.                                { return TokenType.BAD_CHARACTER; }
