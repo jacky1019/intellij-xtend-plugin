@@ -54,20 +54,15 @@ public class XtendParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // (Buchstaben|Keyword|String|Comment|LineTerminator)
+  // Buchstaben|Keyword|String|IntegerLiteral|Comment|LineTerminator
   static boolean XtendFile(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "XtendFile")) return false;
-    return XtendFile_0(builder_, level_ + 1);
-  }
-
-  // Buchstaben|Keyword|String|Comment|LineTerminator
-  private static boolean XtendFile_0(PsiBuilder builder_, int level_) {
-    if (!recursion_guard_(builder_, level_, "XtendFile_0")) return false;
     boolean result_ = false;
     Marker marker_ = builder_.mark();
     result_ = consumeToken(builder_, BUCHSTABEN);
     if (!result_) result_ = consumeToken(builder_, KEYWORD);
     if (!result_) result_ = consumeToken(builder_, STRING);
+    if (!result_) result_ = consumeToken(builder_, INTEGERLITERAL);
     if (!result_) result_ = consumeToken(builder_, COMMENT);
     if (!result_) result_ = consumeToken(builder_, LINETERMINATOR);
     if (!result_) {

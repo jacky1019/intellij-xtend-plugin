@@ -27,6 +27,7 @@ public interface XtendTypes {
 
   IElementType BUCHSTABEN = new XtendTokenType("Buchstaben");
   IElementType COMMENT = new XtendTokenType("Comment");
+  IElementType INTEGERLITERAL = new XtendTokenType("IntegerLiteral");
   IElementType KEYWORD = new XtendTokenType("Keyword");
   IElementType LINETERMINATOR = new XtendTokenType("LineTerminator");
   IElementType STRING = new XtendTokenType("String");

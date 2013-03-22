@@ -20,11 +20,13 @@ public class XtendSyntaxHighlighter extends SyntaxHighlighterBase {
     
     static final TextAttributesKey COMMENT = createTextAttributesKey("COMMENT", new TextAttributes(new Color(63, 127, 95), null, null, null, Font.PLAIN));
     static final TextAttributesKey STRING = createTextAttributesKey("STRING", new TextAttributes(new Color(42, 0, 255), null, null, null, Font.PLAIN));
+    static final TextAttributesKey INTEGERLITERAL = createTextAttributesKey("INTEGERLITERAL", new TextAttributes(new Color(125, 125, 125), null, null, null, Font.PLAIN));
     static final TextAttributesKey BAD_CHARACTER = createTextAttributesKey("SIMPLE_BAD_CHARACTER", new TextAttributes(Color.RED, null, null, null, Font.BOLD));
     static final TextAttributesKey KEYWORD = createTextAttributesKey("KEYWORD", new TextAttributes(new Color(127, 0, 85), null, null, null, Font.BOLD));
 
     private static final TextAttributesKey[] BAD_CHARACTER_KEYS = new TextAttributesKey[]{BAD_CHARACTER};
     private static final TextAttributesKey[] STRING_KEYS = new TextAttributesKey[]{STRING};
+    private static final TextAttributesKey[] INTEGERLITERAL_KEYS = new TextAttributesKey[]{INTEGERLITERAL};
     private static final TextAttributesKey[] KEYWORD_KEYS = new TextAttributesKey[]{KEYWORD};
     private static final TextAttributesKey[] COMMENT_KEYS = new TextAttributesKey[]{COMMENT};
     private static final TextAttributesKey[] EMPTY_KEYS = new TextAttributesKey[0];
@@ -46,6 +48,8 @@ public class XtendSyntaxHighlighter extends SyntaxHighlighterBase {
             return KEYWORD_KEYS;
         } else if (tokenType.equals(XtendTypes.STRING)) {
             return STRING_KEYS;
+        } else if (tokenType.equals(XtendTypes.INTEGERLITERAL)) {
+            return INTEGERLITERAL_KEYS;
         } else {
             return EMPTY_KEYS;
         }

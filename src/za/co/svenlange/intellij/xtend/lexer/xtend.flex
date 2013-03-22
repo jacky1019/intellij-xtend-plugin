@@ -29,7 +29,9 @@ CommentContent       = ( [^*] | \*+ [^/*] )*
 
 Identifier = [:jletter:] [:jletterdigit:]*
 
+/* integer literals */
 DecIntegerLiteral = 0 | [1-9][0-9]*
+DecLongLiteral    = {DecIntegerLiteral} [lL]
 
 /* string and character literals */
 StringCharacter = [^\r\n\"\\]
@@ -156,6 +158,10 @@ SingleCharacter = [^\r\n\'\\]
   
   /* string literal */
   \"                             {yybegin(STRING);}
+  
+  /* numeric literals */
+  {DecIntegerLiteral}            {return XtendTypes.INTEGERLITERAL;}
+  {DecLongLiteral}               {return XtendTypes.INTEGERLITERAL;}
   
   /* identifiers */ 
   {Identifier}                   {return XtendTypes.BUCHSTABEN;}

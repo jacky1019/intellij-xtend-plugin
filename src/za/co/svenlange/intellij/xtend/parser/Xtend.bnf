@@ -15,4 +15,4 @@
   tokenTypeClass="za.co.svenlange.intellij.xtend.psi.XtendTokenType"
 }
  
-XtendFile ::= (Buchstaben|Keyword|String|Comment|LineTerminator)
+XtendFile ::= (Buchstaben|Keyword|String|IntegerLiteral|Comment|LineTerminator)
