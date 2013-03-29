@@ -1,2 +1,6 @@
 out
 *.jar
+.DS_Store
+target
+*.iws
+TODO.txt
