@@ -4,6 +4,7 @@ import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.TokenType;
 import com.intellij.psi.tree.IElementType;
 import za.co.svenlange.intellij.xtend.psi.XtendTypes;
+import static za.co.svenlange.intellij.xtend.psi.XtendTypes.*;
 %%
 
 %class XtendLexer
@@ -42,119 +43,119 @@ SingleCharacter = [^\r\n\'\\]
 %%
 <YYINITIAL> {
   /* keywords (Xbase) */
-  "boolean"                      {return XtendTypes.KEYWORD;}
-  "break"                        {return XtendTypes.KEYWORD;}
-  "byte"                         {return XtendTypes.KEYWORD;}
-  "case"                         {return XtendTypes.KEYWORD;}
-  "catch"                        {return XtendTypes.KEYWORD;}
-  "char"                         {return XtendTypes.KEYWORD;}
-  "class"                        {return XtendTypes.KEYWORD;}
-  "const"                        {return XtendTypes.KEYWORD;}
-  "continue"                     {return XtendTypes.KEYWORD;}
-  "do"                           {return XtendTypes.KEYWORD;}
-  "double"                       {return XtendTypes.KEYWORD;}
-  "else"                         {return XtendTypes.KEYWORD;}
-  "extends"                      {return XtendTypes.KEYWORD;}
-  "finally"                      {return XtendTypes.KEYWORD;}
-  "float"                        {return XtendTypes.KEYWORD;}
-  "for"                          {return XtendTypes.KEYWORD;}
-  "default"                      {return XtendTypes.KEYWORD;}
-  "int"                          {return XtendTypes.KEYWORD;}
-  "interface"                    {return XtendTypes.KEYWORD;}
-  "long"                         {return XtendTypes.KEYWORD;}
-  "native"                       {return XtendTypes.KEYWORD;}
-  "goto"                         {return XtendTypes.KEYWORD;}
-  "if"                           {return XtendTypes.KEYWORD;}
-  "public"                       {return XtendTypes.KEYWORD;}
-  "short"                        {return XtendTypes.KEYWORD;}
-  "super"                        {return XtendTypes.KEYWORD;}
-  "switch"                       {return XtendTypes.KEYWORD;}
-  "synchronized"                 {return XtendTypes.KEYWORD;}
-  "transient"                    {return XtendTypes.KEYWORD;}
-  "void"                         {return XtendTypes.KEYWORD;}
-  "while"                        {return XtendTypes.KEYWORD;}
-  "this"                         {return XtendTypes.KEYWORD;}
+  "boolean"                      {return KEYWORD;}
+  "break"                        {return KEYWORD;}
+  "byte"                         {return KEYWORD;}
+  "case"                         {return KEYWORD;}
+  "catch"                        {return KEYWORD;}
+  "char"                         {return KEYWORD;}
+  "class"                        {return KEYWORD;}
+  "const"                        {return KEYWORD;}
+  "continue"                     {return KEYWORD;}
+  "do"                           {return KEYWORD;}
+  "double"                       {return KEYWORD;}
+  "else"                         {return KEYWORD;}
+  "extends"                      {return KEYWORD;}
+  "finally"                      {return KEYWORD;}
+  "float"                        {return KEYWORD;}
+  "for"                          {return KEYWORD;}
+  "default"                      {return KEYWORD;}
+  "int"                          {return KEYWORD;}
+  "interface"                    {return KEYWORD;}
+  "long"                         {return KEYWORD;}
+  "native"                       {return KEYWORD;}
+  "goto"                         {return KEYWORD;}
+  "if"                           {return KEYWORD;}
+  "public"                       {return KEYWORD;}
+  "short"                        {return KEYWORD;}
+  "super"                        {return KEYWORD;}
+  "switch"                       {return KEYWORD;}
+  "synchronized"                 {return KEYWORD;}
+  "transient"                    {return KEYWORD;}
+  "void"                         {return KEYWORD;}
+  "while"                        {return KEYWORD;}
+  "this"                         {return KEYWORD;}
   
   /* keywords (Xtend) */
-  "abstract"                     {return XtendTypes.KEYWORD;}
-  "create"                       {return XtendTypes.KEYWORD;}
-  "def"                          {return XtendTypes.KEYWORD;}
-  "dispatch"                     {return XtendTypes.KEYWORD;}
-  "extension"                    {return XtendTypes.KEYWORD;}
-  "final"                        {return XtendTypes.KEYWORD;}
-  "implements"                   {return XtendTypes.KEYWORD;}
-  "import"                       {return XtendTypes.KEYWORD;}
-  "instanceof"                   {return XtendTypes.KEYWORD;}
-  "new"                          {return XtendTypes.KEYWORD;}
-  "override"                     {return XtendTypes.KEYWORD;}
-  "package"                      {return XtendTypes.KEYWORD;}
-  "protected"                    {return XtendTypes.KEYWORD;}
-  "private"                      {return XtendTypes.KEYWORD;}
-  "return"                       {return XtendTypes.KEYWORD;}
-  "static"                       {return XtendTypes.KEYWORD;}
-  "throws"                       {return XtendTypes.KEYWORD;}
-  "val"                          {return XtendTypes.KEYWORD;}
-  "var"                          {return XtendTypes.KEYWORD;}
+  "abstract"                     {return KEYWORD;}
+  "create"                       {return KEYWORD;}
+  "def"                          {return KEYWORD;}
+  "dispatch"                     {return KEYWORD;}
+  "extension"                    {return KEYWORD;}
+  "final"                        {return KEYWORD;}
+  "implements"                   {return KEYWORD;}
+  "import"                       {return KEYWORD;}
+  "instanceof"                   {return KEYWORD;}
+  "new"                          {return KEYWORD;}
+  "override"                     {return KEYWORD;}
+  "package"                      {return KEYWORD;}
+  "protected"                    {return KEYWORD;}
+  "private"                      {return KEYWORD;}
+  "return"                       {return KEYWORD;}
+  "static"                       {return KEYWORD;}
+  "throws"                       {return KEYWORD;}
+  "val"                          {return KEYWORD;}
+  "var"                          {return KEYWORD;}
   
   
   /* boolean literals */
-  "true"                         {return XtendTypes.KEYWORD;}
-  "false"                        {return XtendTypes.KEYWORD;}
+  "true"                         {return KEYWORD;}
+  "false"                        {return KEYWORD;}
   
   /* null literal */
-  "null"                         {return XtendTypes.KEYWORD;}
+  "null"                         {return KEYWORD;}
   
   
   /* separators */
-  "("                            {return XtendTypes.BUCHSTABEN;}
-  ")"                            {return XtendTypes.BUCHSTABEN;}
-  "{"                            {return XtendTypes.BUCHSTABEN;}
-  "}"                            {return XtendTypes.BUCHSTABEN;}
-  "["                            {return XtendTypes.BUCHSTABEN;}
-  "]"                            {return XtendTypes.BUCHSTABEN;}
-  ";"                            {return XtendTypes.BUCHSTABEN;}
-  ","                            {return XtendTypes.BUCHSTABEN;}
-  "."                            {return XtendTypes.BUCHSTABEN;}
-  "::"                           {return XtendTypes.BUCHSTABEN;}
+  "("                            {return BUCHSTABEN;}
+  ")"                            {return BUCHSTABEN;}
+  "{"                            {return BUCHSTABEN;}
+  "}"                            {return BUCHSTABEN;}
+  "["                            {return BUCHSTABEN;}
+  "]"                            {return BUCHSTABEN;}
+  ";"                            {return BUCHSTABEN;}
+  ","                            {return BUCHSTABEN;}
+  "."                            {return BUCHSTABEN;}
+  "::"                           {return BUCHSTABEN;}
   
   /* operators */
-  "="                            {return XtendTypes.BUCHSTABEN;}
-  ">"                            {return XtendTypes.BUCHSTABEN;}
-  "<"                            {return XtendTypes.BUCHSTABEN;}
-  "!"                            {return XtendTypes.BUCHSTABEN;}
-  "~"                            {return XtendTypes.BUCHSTABEN;}
-  "?"                            {return XtendTypes.BUCHSTABEN;}
-  ":"                            {return XtendTypes.BUCHSTABEN;}
-  "=="                           {return XtendTypes.BUCHSTABEN;}
-  "<="                           {return XtendTypes.BUCHSTABEN;}
-  ">="                           {return XtendTypes.BUCHSTABEN;}
-  "!="                           {return XtendTypes.BUCHSTABEN;}
-  "&&"                           {return XtendTypes.BUCHSTABEN;}
-  "||"                           {return XtendTypes.BUCHSTABEN;}
-  "++"                           {return XtendTypes.BUCHSTABEN;}
-  "--"                           {return XtendTypes.BUCHSTABEN;}
-  "+"                            {return XtendTypes.BUCHSTABEN;}
-  "-"                            {return XtendTypes.BUCHSTABEN;}
-  "*"                            {return XtendTypes.BUCHSTABEN;}
-  "/"                            {return XtendTypes.BUCHSTABEN;}
-  "&"                            {return XtendTypes.BUCHSTABEN;}
-  "|"                            {return XtendTypes.BUCHSTABEN;}
-  "^"                            {return XtendTypes.BUCHSTABEN;}
-  "%"                            {return XtendTypes.BUCHSTABEN;}
-  "<<"                           {return XtendTypes.BUCHSTABEN;}
-  ">>"                           {return XtendTypes.BUCHSTABEN;}
-  ">>>"                          {return XtendTypes.BUCHSTABEN;}
-  "+="                           {return XtendTypes.BUCHSTABEN;}
-  "-="                           {return XtendTypes.BUCHSTABEN;}
-  "*="                           {return XtendTypes.BUCHSTABEN;}
-  "/="                           {return XtendTypes.BUCHSTABEN;}
-  "&="                           {return XtendTypes.BUCHSTABEN;}
-  "|="                           {return XtendTypes.BUCHSTABEN;}
-  "^="                           {return XtendTypes.BUCHSTABEN;}
-  "%="                           {return XtendTypes.BUCHSTABEN;}
-  "<<="                          {return XtendTypes.BUCHSTABEN;}
-  ">>="                          {return XtendTypes.BUCHSTABEN;}
-  ">>>="                         {return XtendTypes.BUCHSTABEN;}
+  "="                            {return BUCHSTABEN;}
+  ">"                            {return BUCHSTABEN;}
+  "<"                            {return BUCHSTABEN;}
+  "!"                            {return BUCHSTABEN;}
+  "~"                            {return BUCHSTABEN;}
+  "?"                            {return BUCHSTABEN;}
+  ":"                            {return BUCHSTABEN;}
+  "=="                           {return BUCHSTABEN;}
+  "<="                           {return BUCHSTABEN;}
+  ">="                           {return BUCHSTABEN;}
+  "!="                           {return BUCHSTABEN;}
+  "&&"                           {return BUCHSTABEN;}
+  "||"                           {return BUCHSTABEN;}
+  "++"                           {return BUCHSTABEN;}
+  "--"                           {return BUCHSTABEN;}
+  "+"                            {return BUCHSTABEN;}
+  "-"                            {return BUCHSTABEN;}
+  "*"                            {return BUCHSTABEN;}
+  "/"                            {return BUCHSTABEN;}
+  "&"                            {return BUCHSTABEN;}
+  "|"                            {return BUCHSTABEN;}
+  "^"                            {return BUCHSTABEN;}
+  "%"                            {return BUCHSTABEN;}
+  "<<"                           {return BUCHSTABEN;}
+  ">>"                           {return BUCHSTABEN;}
+  ">>>"                          {return BUCHSTABEN;}
+  "+="                           {return BUCHSTABEN;}
+  "-="                           {return BUCHSTABEN;}
+  "*="                           {return BUCHSTABEN;}
+  "/="                           {return BUCHSTABEN;}
+  "&="                           {return BUCHSTABEN;}
+  "|="                           {return BUCHSTABEN;}
+  "^="                           {return BUCHSTABEN;}
+  "%="                           {return BUCHSTABEN;}
+  "<<="                          {return BUCHSTABEN;}
+  ">>="                          {return BUCHSTABEN;}
+  ">>>="                         {return BUCHSTABEN;}
   
   /* string literal */
   \"                             {yybegin(STRING);}
@@ -164,19 +165,19 @@ SingleCharacter = [^\r\n\'\\]
   {DecLongLiteral}               {return XtendTypes.INTEGERLITERAL;}
   
   /* identifiers */ 
-  {Identifier}                   {return XtendTypes.BUCHSTABEN;}
+  {Identifier}                   {return BUCHSTABEN;}
  
   /* literals */
-  {DecIntegerLiteral}            {return XtendTypes.BUCHSTABEN;}
-  \"                             {return XtendTypes.BUCHSTABEN;}
+  {DecIntegerLiteral}            {return BUCHSTABEN;}
+  \"                             {return BUCHSTABEN;}
 
   /* operators */
-  "="                            {return XtendTypes.BUCHSTABEN;}
-  "=="                           {return XtendTypes.BUCHSTABEN;}
-  "+"                            {return XtendTypes.BUCHSTABEN;}
+  "="                            {return BUCHSTABEN;}
+  "=="                           {return BUCHSTABEN;}
+  "+"                            {return BUCHSTABEN;}
 
   /* comments */
-  {Comment}                      {return XtendTypes.COMMENT;}
+  {Comment}                      {return COMMENT;}
  
   /* whitespace */
   {WhiteSpace}+                  {return TokenType.WHITE_SPACE;}
@@ -199,7 +200,6 @@ SingleCharacter = [^\r\n\'\\]
   
   /* error cases */
   \\.                            { throw new RuntimeException("Illegal escape sequence \""+yytext()+"\""); }
-  {LineTerminator}               { throw new RuntimeException("Unterminated string at end of line"); }
 }
 
 // Unknown symbol is using for debug goals.
