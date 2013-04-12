@@ -59,6 +59,10 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="HighlightingAdvisor">
+    <option name="SUGGEST_TYPE_AWARE_HIGHLIGHTING" value="false" />
+    <option name="TYPE_AWARE_HIGHLIGHTING_ENABLED" value="true" />
+  </component>
   <component name="IdProvider" IDEtalkID="23FD29338D34A2F46D916539A6C43D8E" />
   <component name="InspectionProjectProfileManager">
     <profiles>
@@ -206,7 +210,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA IC-123.SNAPSHOT" project-jdk-type="IDEA JDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectRunConfigurationManager">
@@ -242,5 +246,31 @@
     <mapping directory="" vcs="Git" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <component name="libraryTable">
+    <library name="scala-compiler">
+      <CLASSES>
+        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-compiler.jar!/" />
+        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-library.jar!/" />
+        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-reflect.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="scala-library">
+      <CLASSES>
+        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-library.jar!/" />
+        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-swing.jar!/" />
+        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-actors.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file:///Volumes/Data/Downloads/scala-2.10.1/doc/scala-devel-docs/api" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/src/scala-library-src.jar!/" />
+        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/src/scala-swing-src.jar!/" />
+        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/src/scala-actors-src.jar!/" />
+      </SOURCES>
+    </library>
+  </component>
 </project>
 
