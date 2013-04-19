@@ -5,9 +5,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildTargetType;
 import org.jetbrains.jps.incremental.BuilderService;
 import org.jetbrains.jps.incremental.ModuleLevelBuilder;
-import org.jetbrains.jps.incremental.TargetBuilder;
 
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 public class XtendBuilderService extends BuilderService {
@@ -21,15 +20,9 @@ public class XtendBuilderService extends BuilderService {
 
     @NotNull
     @Override
-    public List<? extends TargetBuilder<?, ?>> createBuilders() {
-        return super.createBuilders();    //To change body of overridden methods use File | Settings | File Templates.
-    }
-
-    @NotNull
-    @Override
     public List<? extends ModuleLevelBuilder> createModuleLevelBuilders() {
         LOG.error("XtendBuilderService");
-        return Collections.singletonList(new XtendBuilder());
+        return Arrays.asList(new XtendBuilder());
     }
 
 

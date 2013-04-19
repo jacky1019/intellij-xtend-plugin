@@ -9,18 +9,17 @@
 
     <!--<application-components></application-components>-->
 
-    <!--<project-components>-->
-        <!--<component>-->
-            <!--<implementation-class>za.co.svenlange.intellij.xtend.compiler.XtendCompilerProjectComponent-->
-            <!--</implementation-class>-->
-        <!--</component>-->
-    <!--</project-components>-->
+    <project-components>
+        <component>
+            <implementation-class>za.co.svenlange.intellij.xtend.compiler.XtendCompilerProjectComponent</implementation-class>
+        </component>
+    </project-components>
 
     <extensions defaultExtensionNs="com.intellij">
+        <compileServer.plugin classpath="xtend-jps-plugin.jar"/>
         <fileTypeFactory implementation="za.co.svenlange.intellij.xtend.XtendFileTypeFactory"/>
         <lang.parserDefinition language="Xtend" implementationClass="za.co.svenlange.intellij.xtend.parser.XtendParserDefinition"/>
         <lang.syntaxHighlighterFactory key="Xtend" implementationClass="za.co.svenlange.intellij.xtend.XtendSyntaxHighlighterFactory"/>
-        <compileServer.plugin classpath="xtend-jps-plugin.jar"/>
     </extensions>
 
 </idea-plugin>

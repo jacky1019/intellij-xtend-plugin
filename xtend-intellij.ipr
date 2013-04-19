@@ -5,24 +5,14 @@
   </component>
   <component name="ArtifactManager">
     <artifact build-on-make="true" name="XtendPlugin">
-      <output-path>$PROJECT_DIR$/out/artifacts</output-path>
+      <output-path>$PROJECT_DIR$/out/artifacts/XtendPlugin</output-path>
       <root id="root">
-        <element id="directory" name="XtendPlugin">
-          <element id="directory" name="lib">
-            <element id="archive" name="xtend-jps-plugin.jar">
-              <element id="module-output" name="xtend-jps-plugin" />
-              <element id="directory" name="META-INF">
-                <element id="dir-copy" path="$PROJECT_DIR$/jps-plugin/src/META-INF" />
-              </element>
-            </element>
-            <element id="archive" name="xtend-intellij-plugin.jar">
-              <element id="module-output" name="xtend-intellij" />
-              <element id="directory" name="META-INF">
-                <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-                <element id="file-copy" path="$PROJECT_DIR$/META-INF/plugin.xml" />
-              </element>
-              <element id="dir-copy" path="$PROJECT_DIR$/resources/icons" />
-            </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="xtend-intellij-plugin.jar">
+            <element id="module-output" name="xtend-intellij" />
+          </element>
+          <element id="archive" name="xtend-jps-plugin.jar">
+            <element id="module-output" name="xtend-jps-plugin" />
           </element>
         </element>
       </root>
@@ -42,6 +32,7 @@
       <entry name="?*.dtd" />
       <entry name="?*.tld" />
       <entry name="?*.ftl" />
+      <entry name="*META-INF/services/**" />
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
@@ -210,7 +201,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA IC-123.SNAPSHOT" project-jdk-type="IDEA JDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA IC-130.SNAPSHOT" project-jdk-type="IDEA JDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectRunConfigurationManager">
@@ -246,31 +237,5 @@
     <mapping directory="" vcs="Git" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
-  <component name="libraryTable">
-    <library name="scala-compiler">
-      <CLASSES>
-        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-compiler.jar!/" />
-        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-library.jar!/" />
-        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-reflect.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="scala-library">
-      <CLASSES>
-        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-library.jar!/" />
-        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-swing.jar!/" />
-        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/lib/scala-actors.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="file:///Volumes/Data/Downloads/scala-2.10.1/doc/scala-devel-docs/api" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/src/scala-library-src.jar!/" />
-        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/src/scala-swing-src.jar!/" />
-        <root url="jar:///Volumes/Data/Downloads/scala-2.10.1/src/scala-actors-src.jar!/" />
-      </SOURCES>
-    </library>
-  </component>
 </project>
 
