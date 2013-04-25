@@ -12,6 +12,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="xtend-jps-plugin" />
     <orderEntry type="library" name="org.eclipse.xtend.standalone-2.4.1" level="project" />
+    <orderEntry type="library" name="guice-3.0" level="project" />
   </component>
 </module>
 
