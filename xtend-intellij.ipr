@@ -208,7 +208,7 @@
     <configuration default="false" name="Idea" type="Application" factoryName="Application" singleton="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="com.intellij.idea.Main" />
-      <option name="VM_PARAMETERS" value="-Xmx800m -XX:ReservedCodeCacheSize=64m -XX:MaxPermSize=250m -XX:+HeapDumpOnOutOfMemoryError -ea -Didea.debug.mode=true -Didea.is.internal=true -Didea.system.path=../xtend-system -Didea.config.path=../xtend-config -Dapple.laf.useScreenMenuBar=true -Dplugin.path=$PROJECT_DIR$/out/artifacts/XtendPlugin" />
+      <option name="VM_PARAMETERS" value="-Xmx800m -XX:ReservedCodeCacheSize=64m -XX:MaxPermSize=250m -XX:+HeapDumpOnOutOfMemoryError -ea -Didea.debug.mode=true -Didea.is.internal=true -Didea.system.path=../xtend-system -Didea.config.path=../xtend-config -Dapple.laf.useScreenMenuBar=true -Dplugin.path=$PROJECT_DIR$/out/artifacts/XtendPlugin -Dcompiler.process.debug.port=4567" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
