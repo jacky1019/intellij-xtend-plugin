@@ -237,5 +237,16 @@
     <mapping directory="" vcs="Git" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <component name="libraryTable">
+    <library name="org.eclipse.xtend.standalone-2.4.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/org.eclipse.xtend.standalone-2.4.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/org.eclipse.xtend.standalone-2.4.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+  </component>
 </project>
 
