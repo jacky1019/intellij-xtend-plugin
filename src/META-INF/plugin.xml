@@ -5,7 +5,7 @@
     <description>Plugin for Xtend language support</description>
     <version>1.0</version>
     <vendor>YourCompany</vendor>
-    <idea-version since-build="123.72"/>
+    <idea-version since-build="129.239"/>
 
     <!--<application-components></application-components>-->
 
