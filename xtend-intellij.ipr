@@ -16,6 +16,9 @@
           </element>
           <element id="library" level="project" name="guice-3.0" />
           <element id="library" level="project" name="org.eclipse.xtend.standalone-2.4.1" />
+          <element id="library" level="project" name="javax.inject" />
+          <element id="library" level="project" name="guava-10.0.1" />
+          <element id="library" level="project" name="log4j-1.2.15" />
         </element>
       </root>
     </artifact>
@@ -210,7 +213,7 @@
     <configuration default="false" name="Idea" type="Application" factoryName="Application" singleton="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="com.intellij.idea.Main" />
-      <option name="VM_PARAMETERS" value="-Xmx800m -XX:ReservedCodeCacheSize=64m -XX:MaxPermSize=250m -XX:+HeapDumpOnOutOfMemoryError -ea -Didea.debug.mode=true -Didea.is.internal=true -Didea.system.path=../xtend-system -Didea.config.path=../xtend-config -Dapple.laf.useScreenMenuBar=true -Dplugin.path=$PROJECT_DIR$/out/artifacts/XtendPlugin -Dcompiler.process.debug.port=4567" />
+      <option name="VM_PARAMETERS" value="-Xmx800m -XX:ReservedCodeCacheSize=64m -XX:MaxPermSize=250m -XX:+HeapDumpOnOutOfMemoryError -ea -Didea.debug.mode=true -Didea.is.internal=true -Didea.system.path=../xtend-system -Didea.config.path=../xtend-config -Dapple.laf.useScreenMenuBar=true -Dplugin.path=$PROJECT_DIR$/out/artifacts/XtendPlugin" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -240,12 +243,37 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
+    <library name="guava-10.0.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/guava-10.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/guava-10.0.1-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="guice-3.0">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/guice-3.0.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
+    </library>
+    <library name="javax.inject">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/javax.inject.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="log4j-1.2.15">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.15.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.15-sources.jar!/" />
+      </SOURCES>
     </library>
     <library name="org.eclipse.xtend.standalone-2.4.1">
       <CLASSES>

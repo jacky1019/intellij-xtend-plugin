@@ -16,7 +16,7 @@
     </project-components>
 
     <extensions defaultExtensionNs="com.intellij">
-        <compileServer.plugin classpath="xtend-jps-plugin.jar"/>
+        <compileServer.plugin classpath="xtend-jps-plugin.jar;org.eclipse.xtend.standalone-2.4.1.jar;guice-3.0.jar;javax.inject.jar;guava-10.0.1.jar;log4j-1.2.15.jar"/>
         <fileTypeFactory implementation="za.co.svenlange.intellij.xtend.XtendFileTypeFactory"/>
         <lang.parserDefinition language="Xtend" implementationClass="za.co.svenlange.intellij.xtend.parser.XtendParserDefinition"/>
         <lang.syntaxHighlighterFactory key="Xtend" implementationClass="za.co.svenlange.intellij.xtend.XtendSyntaxHighlighterFactory"/>
