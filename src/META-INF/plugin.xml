@@ -11,7 +11,7 @@
 
     <project-components>
         <component>
-            <implementation-class>za.co.svenlange.intellij.xtend.compiler.XtendCompilerProjectComponent</implementation-class>
+            <implementation-class>za.co.svenlange.intellij.xtend.components.XtendProjectComponent</implementation-class>
         </component>
     </project-components>
 
