@@ -4,10 +4,9 @@
     <name>Xtend</name>
     <description>Plugin for Xtend language support</description>
     <version>1.0</version>
-    <vendor>YourCompany</vendor>
-    <idea-version since-build="129.239"/>
+    <vendor url="http://www.svenlange.co.za" logo="/icons/Xtend-Icon-16.png">Sven Lange</vendor>
 
-    <!--<application-components></application-components>-->
+    <idea-version since-build="129.239"/>
 
     <project-components>
         <component>
