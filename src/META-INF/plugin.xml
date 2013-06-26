@@ -2,8 +2,8 @@
 <idea-plugin url="https://github.com/svenlange/intellij-xtend-plugin" version="2">
     <id>Xtend</id>
     <name>Xtend</name>
-    <description>Plugin for Xtend language support</description>
-    <version>1.0</version>
+    <description>Plugin for Xtend language support (www.xtend-lang.org)</description>
+    <version>0.0.1-experimental-alpha</version>
     <vendor url="http://www.svenlange.co.za" logo="/icons/Xtend-Icon-16.png">Sven Lange</vendor>
 
     <idea-version since-build="129.239"/>
