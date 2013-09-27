@@ -10,9 +10,15 @@ None so far. This plugin is still experimental and under development. The first 
 
 SCM https://github.com/svenlange/intellij-xtend-plugin
 
-## Dev Setup
-
-Two IntelliJ Plugins are needed: [JFlex](http://plugins.intellij.net/plugin/?idea&pluginId=263) and [Grammar-Kit](http://plugins.intellij.net/plugin?pr=idea&pluginId=6606)
+## Development Setup
+1. Download IntelliJ Community Edition (idea-IC)
+2. Checkout this git repository
+3. Start idea-IC and open the file <code>xtend-intellij.ipr</code>
+4. Define the <code>Project SDK</code> by clicking <code>File > Project Structure...</code> in the main menu
+5. Click <code>New...</code> and choose <code>Intellij Platform Plugin SDK</code> under <code>Project</code> in the <code>Project Settings</code>
+ 5. A wizard will help to setup the JDK and Plugin SDK. Choose a Java 6 JDK and pick the installed idea-IC as Plugin SDK
+6. To build the plugin click <code>Build > Prepare Plugin Module 'xtend-intellij' For Deployment</code> in the main menu
+7. For the plugin development install the plugins [JFlex](http://plugins.intellij.net/plugin/?idea&pluginId=263) and [Grammar-Kit](http://plugins.intellij.net/plugin?pr=idea&pluginId=6606)
 
 ## Resources
 
