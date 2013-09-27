@@ -11,7 +11,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="xtend-jps-plugin" />
-    <orderEntry type="library" name="org.eclipse.xtend.standalone-2.4.2" level="project" />
+    <orderEntry type="library" name="org.eclipse.xtend.standalone-2.4.3" level="project" />
     <orderEntry type="library" name="guice-3.0" level="project" />
     <orderEntry type="library" name="javax.inject" level="project" />
     <orderEntry type="library" name="guava-10.0.1" level="project" />
