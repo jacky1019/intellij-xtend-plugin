@@ -17,7 +17,7 @@
 {
   classHeader="header.txt"
   parserClass="za.co.svenlange.intellij.xtend.parser.XtendParser"
-  stubParserClass="za.co.svenlange.intellij.xtend.parser.GeneratedParserUtilBase"
+  parserUtilClass="za.co.svenlange.intellij.xtend.parser.XtendParserUtil"
  
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
  
