@@ -91,7 +91,7 @@ public class XtendBuilder extends ModuleLevelBuilder {
         XtendBatchCompiler xtendBatchCompiler = injector.getInstance(XtendBatchCompiler.class);
 
         final String outputPath = getOutputPath(chunk);
-        final String classPath = "/Users/lange/Projekte/opensource/jetbrains/xtend-intellij/lib/org.eclipse.xtend.standalone-2.4.1.jar";
+        final String classPath = "/Users/sven/projekte/intellij-xtend-plugin/lib/org.eclipse.xtend.standalone-2.4.3.jar";
         final String sourcePath = chunk.representativeTarget().getModule().getSourceRoots().get(0).getUrl();
 
         xtendBatchCompiler.setOutputPath(outputPath);
