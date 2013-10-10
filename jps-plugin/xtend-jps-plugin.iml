@@ -14,6 +14,8 @@
     <orderEntry type="library" name="javax.inject" level="project" />
     <orderEntry type="library" name="guava-10.0.1" level="project" />
     <orderEntry type="library" name="testng-6.8.7" level="project" />
+    <orderEntry type="library" name="org.eclipse.xtext.standalone-2.4.3" level="project" />
+    <orderEntry type="library" name="org.eclipse.xtext.xbase.lib-2.4.3" level="project" />
   </component>
 </module>
 

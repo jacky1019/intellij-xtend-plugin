@@ -280,6 +280,22 @@
         <root url="jar://$PROJECT_DIR$/lib/org.eclipse.xtend.standalone-2.4.3-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="org.eclipse.xtext.standalone-2.4.3">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/org.eclipse.xtext.standalone-2.4.3.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/org.eclipse.xtext.standalone-2.4.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="org.eclipse.xtext.xbase.lib-2.4.3">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/org.eclipse.xtext.xbase.lib-2.4.3.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="testng-6.8.7">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/testng-6.8.7.jar!/" />
