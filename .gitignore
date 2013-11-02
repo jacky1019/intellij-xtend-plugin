@@ -3,3 +3,4 @@ out
 target
 *.iws
 TODO.txt
+*._trace
