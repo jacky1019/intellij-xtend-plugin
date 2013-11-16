@@ -56,11 +56,11 @@ public class XtendBuilder extends ModuleLevelBuilder {
 
     public static final String COMPILER_NAME = "Xtend Compiler";
 
+    private static final String DOT_XTEND_EXTENSION = ".xtend";
+
     protected XtendBuilder() {
         super(SOURCE_GENERATOR);
     }
-
-    private static final String DOT_XTEND_EXTENSION = ".xtend";
 
     private static final FileFilter XTEND_SOURCES_FILTER =
             SystemInfo.isFileSystemCaseSensitive ?
