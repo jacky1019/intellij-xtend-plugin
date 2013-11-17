@@ -28,4 +28,6 @@ public interface XtendIcons {
 
 	Icon XTEND_FILE = IconLoader.getIcon("/icons/xtend_file.png");
 
+    Icon XTEND_LOGO = IconLoader.getIcon("/icons/Xtend-Icon-16.png");
+
 }
